@@ -23,9 +23,9 @@ class HonClient(object):
       url = self.__root_url + path_suffix
 
       heroes = self.makeGetRequest(url)
-      heroes_file = open('json_data/heroes.json', 'w')
-      heroes_file.write(heroes)
-      heroes_file.close()
+      file_name = 'json_data/heroes.json'
+      self.writeFile(file_name, heroes)
+      
       return heroes
 
    def getHeroStats(self, account_id, hero_id):
@@ -33,9 +33,9 @@ class HonClient(object):
       url = self.__root_url + path_suffix
 
       hero_stats = self.makeGetRequest(url)
-      hero_stats_file = open('json_data/hero_stats/' + account_id + '_' + hero_id + '.json', 'w')
-      hero_stat_file.write(hero_stats)
-      hero_stat_file.close()
+      file_name = 'json_data/hero_stats/' + account_id + '_' + hero_id + '.json'
+      self.writeFile(file_name, hero_stats)
+
       return hero_stats
 
    def getHeroStats(self, nickname, hero_id):
@@ -43,9 +43,9 @@ class HonClient(object):
       url = self.__root_url + path_suffix
 
       hero_stats = self.makeGetRequest(url)
-      hero_stats_file = open('json_data/hero_stats/' + nickname + '_' + hero_id + '.json', 'w')
-      hero_stat_file.write(hero_stats)
-      hero_stat_file.close()
+      file_name = 'json_data/hero_stats/' + nickname + '_' + hero_id + '.json'
+      self.writeFile(file_name, hero_stats)
+      
       return hero_stats
 
    def getHeroStats(self, account_id, hero_name):
@@ -53,9 +53,9 @@ class HonClient(object):
       url = self.__root_url + path_suffix
 
       hero_stats = self.makeGetRequest(url)
-      hero_stats_file = open('json_data/hero_stats/' + account_id + '_' + hero_name + '.json', 'w')
-      hero_stat_file.write(hero_stats)
-      hero_stat_file.close()
+      file_name = 'json_data/hero_stats/' + account_id + '_' + hero_name + '.json'
+      self.writeFile(file_name, hero_stats)
+      
       return hero_stats
 
    def getHeroStats(self, nickname, hero_name):
